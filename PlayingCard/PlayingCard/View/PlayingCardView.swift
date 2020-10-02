@@ -25,4 +25,10 @@ class PlayingCardView: UIView {
     var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize {
         didSet { setNeedsDisplay() }
     }
+    private var cornerString: NSAttributedString {
+        return centeredAttributedString(rankString + "\n" + suit, fontSize: cornerFontSize)
+    }
+    private lazy var upperLeftCornerLabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel = createCornerLabel()
+    
 }
