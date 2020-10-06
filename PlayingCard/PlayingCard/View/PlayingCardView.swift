@@ -41,4 +41,12 @@ class PlayingCardView: UIView {
         }
     }
     
+    private func createCornerLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        addSubview(label)
+        
+        return label
+    }
+    
 }
