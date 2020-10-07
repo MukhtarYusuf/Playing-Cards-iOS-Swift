@@ -49,4 +49,17 @@ class PlayingCardView: UIView {
         return label
     }
     
+    private func centeredAttributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString {
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
+        return NSAttributedString(string: string,
+                                  attributes: [NSAttributedString.Key.paragraphStyle : paragraphStyle,
+                                               .font : font
+        ])
+    }
+    
 }
