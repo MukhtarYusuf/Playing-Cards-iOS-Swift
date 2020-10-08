@@ -62,4 +62,11 @@ class PlayingCardView: UIView {
         ])
     }
     
+    private func configureCornerLabel(_ label: UILabel) {
+        label.attributedText = cornerString
+        label.frame.size = CGSize.zero
+        label.sizeToFit()
+        label.isHidden = !isFaceUp
+    }
+    
 }
